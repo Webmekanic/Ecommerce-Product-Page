@@ -1,0 +1,217 @@
+/* @import url((https://fonts.google.com/specimen/Kumbh+Sans); */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.container {
+  border: 3px solid  green;
+  height: 100vh;
+  width: 100%;
+  /* max-width: 70rem; */
+  /* margin: auto; */
+  /* max-width: 90rem; */
+  /* margin-left: 2rem; */
+}
+
+.wrapper {
+  /* border: 2px solid rebeccapurple; */
+  margin: auto;
+  max-width: 65rem;
+  /* padding-left: 18px; */
+  /* padding-left: 1.563rem; */
+}
+
+.myHeader {
+  border-bottom: 1px solid hsla(219, 9%, 45% 0.1);
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+  padding: 18px 0 18px 0;
+  margin: auto;
+  /* border: 2px solid red; */
+  /* margin-left: 2rem; */
+}
+.myMenu{
+  /* border: 2px solid red; */
+  width: 2.188rem;
+  height: 2.188rem;
+  background-image: url(./images/icon-menu.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  /* margin-left: 40px; */
+  display: none;
+}
+.headerLogo{
+  margin-top: 0.625rem;
+
+}
+/* .menu {
+  margin-right: 20px;
+  border: 2px solid red;
+  margin-bottom: 8px;
+  cursor: pointer;
+} */
+hr {
+  /* color: green; */
+  border-bottom: 1px solid hsl(219, 9%, 45%);
+  opacity: 0.1;
+  margin-top: 1px;
+  /* margin-right: 3.125rem; */
+}
+
+.nav-list {
+  /* border: 2px solid orange; */
+  display: flex;
+  flex: 1;
+  margin-left: 3.125rem;
+  gap: 2.188rem;
+  font-size: 16px;
+  list-style: none;
+  text-transform: capitalize;
+  /* margin-right: 80px; */
+  font-weight: 400;
+  gap: 1rem;
+  /* color: green; */
+}
+
+/* a:hover{
+    border-bottom: 3px solid orange;
+} */
+.pageTab:hover {
+  border-bottom: 3px solid hsl(26, 100%, 55%);
+  /* transition: 0.3s linear;   */
+}
+/* li{
+    /* border: 2px solid greenyellow; */
+/* padding: 18px 0 18px 0; */
+/* } */
+
+a {
+  /* border: 2px solid green; */
+  text-decoration: none;
+  color: hsl(219, 9%, 45%);
+  padding: 22px 0 30px 0;
+}
+
+.productDetails {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-around;
+  gap: 1.125rem;
+  align-items: center;
+  /* margin-right: 3.12rem; */
+  /* margin-left: 10px; */
+}
+#productCart {
+  /* border: 2px solid yellow; */
+  cursor: pointer;
+  position: relative;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+#cartItemNo {
+  /* border: 1px solid red; */
+  position: absolute;
+  top: 0;
+  /* right: 0; */
+  color: white;
+  background-color: hsl(26, 100%, 55%);
+  margin-top: -4px;
+  border-radius: 5px;
+  font-size: 10px;
+  padding: 0 5px;
+  left: 10px;
+}
+#avatarImage {
+  /* border: 2px solid black; */
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#avatarImage:hover {
+  border: 1px solid hsl(26, 100%, 55%);
+}
+#avatarImage > img {
+  width: 100%;
+  height: 100%;
+}
+
+/* @media (min-width: 682px) {
+  .nav-list{
+    /* border: 2px solid black; */
+    /* gap: 1rem; */
+  
+  /* } */
+  
+/* } */ 
+@media (max-width: 649px) {
+  /* body{
+    pop
+  } */
+  .container{
+    /* border: 2px solid blue; */
+    /* position: relative; */
+  }
+  .wrapper{
+    /* border: 2px solid black; */
+    margin-left: 0;
+  }
+  .nav-list{
+    display: none;
+    /* border: 2px solid pink; */
+    /* display: block; */
+    /* position: fixed; */
+    /* height: 100%; */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+
+  }
+  .myMenu{
+    /* border: 2px solid blue; */
+    display: block;
+    margin-left: 2.188rem;
+  }
+  
+
+  .myHeader{
+    /* border: 2px solid yellowgreen; */
+    /* width: 100vw; */
+    
+  }
+  .headerLogo{
+    /* border: 2px solid red; */
+
+    /* margin-right: 5rem; */
+  }
+  /* @media (min-width: 650px) {
+    .headerLogo{
+      /* border: 2px solid red; */
+  
+      /* margin-right: 5rem; */
+    /* } */
+    
+  /* } */ 
+  /* .headerLogo{
+    border: 2px solid black;
+  } */
+  hr{
+    display: none;
+  }
+  
+}
+/* @media (max-width: 650px ) {
+  .headerLogo{
+    border: 2px solid black;
+  }
+  
+} */
+ /* .headerLogo{
+    border: 2px solid black;
+  } */
