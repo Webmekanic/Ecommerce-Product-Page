@@ -576,8 +576,46 @@ h1 {
   height: 100%;
   width: 100%;
   margin-top: 2rem;
-  /* border-radius: 8px */
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px
   /* width: 30rem; */
+}
+
+/* CAROUSEL SLIDE */
+
+.lighBoxImg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* border: 3px solid orange; */
+  height: 390px;
+  /* opacity: 0; */
+  transition: opacity 0.4s ease-in-out;
+}
+.lighBoxImg:first-child{
+  background: url(./images/image-product-1.jpg) no-repeat center center/cover ;
+}
+.lighBoxImg:nth-child(2){
+  background: url(./images/image-product-2.jpg) no-repeat center center/cover ;
+}
+.lighBoxImg:nth-child(3){
+  background: url(./images/image-product-3.jpg) no-repeat center center/cover ;
+}
+.lighBoxImg:nth-child(4){
+  background: url(./images/image-product-4.jpg) no-repeat center center/cover ;
+}
+
+
+
+
+
+
+.carousel > img {
+  border: 1px solid blue;
+  height: 100%;
+  width: 100%;
 }
 .lightboxPictures > img {
   height: 100%;
@@ -635,8 +673,18 @@ h1 {
 }
 
 .thumbnailPictures > img:hover {
-  border: 2px solid hsl(26, 100%, 55%);
+  border: 3px solid hsl(26, 100%, 55%);
+  opacity: 0.5;
   /* background-color: rgba(241, 235, 235, 0.75); */
+}
+img.demo {
+  /* opacity: 0.6; */
+}
+
+.active,
+.demo:hover {
+  opacity: 0.6;
+  border: 3px solid hsl(26, 100%, 55%);
 }
 
 @media (min-width: 650px) {
@@ -967,6 +1015,9 @@ h1 {
     /* z-index: 5; */
     /* border: 2px solid red; */
     /* margin-bottom: 60px; */
+  }
+  .lightBoxModal{
+    display: none;
   }
 }
 /* @media (max-width: 650px ) {

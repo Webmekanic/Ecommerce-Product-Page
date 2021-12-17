@@ -5,6 +5,8 @@
 // MAKE THE COUNTER SECTION WORKS AS A USER I SHOULD BE ABLE TO INCREASE AND DECREASE ITEM TO BE PURCHASED
 // ADD ITEMS TO CARTS
 // THE NUMBER OF ITEM TO BE PURCHASED SHOULD DISPLAY AT THE TOP OF THE CART
+// REMOVE FROM CART
+// LIGHTBOX IMPLEMENTATION
 
 // Declare Variables
 const containerUi = document.querySelector(".container");
@@ -27,15 +29,9 @@ const current = document.querySelector(".current");
 const thumbNail1 = document.querySelectorAll(".thumbnailImg");
 const lightBoxModal = document.querySelector(".lightBoxModal");
 const removePopUp = document.querySelector(".removePopUp");
-// const prices = document.querySelector("#priceTag");
-// console.log(prices);
-// const cartBody = document.querySelectorAll(".cartBody");
-
 const auto = true;
 const intervalTime = 5000;
 let slideInterval;
-
-// console.log(addToCart);
 
 // LOAD ALL EVENTS LISTENERS
 LoadAllEventListeners();
@@ -69,14 +65,12 @@ function decreaseNumber(e) {
     counterNumber.innerHTML = 0;
   } else {
     counter--;
-    // console.log(counter);
     counterNumber.innerHTML = counter;
   }
   e.preventDefault();
 }
 function increaseNumber() {
   counter++;
-  // console.log(counter);
   counterNumber.innerHTML = counter;
 }
 
@@ -87,7 +81,6 @@ function nextSlides() {
     current.nextElementSibling.classList.add("current");
   } else {
     slides[0].classList.add("current");
-    // console.log(slides[0]);
   }
 }
 
@@ -106,29 +99,17 @@ if (auto) {
 
 // OPEN CART
 function openCart() {
-  // const cartUI = document.querySelector(".cart");
   const cartBody = document.querySelector(".cartBody");
   cartUI.style.display = "block";
 
   //   EMPTY CART
   if (counterNumber.textContent === "0") {
     emptySection.classList.add("show");
-    // console.log(emptySection);
-  } else {
-    // emptySection.classList.remove("show");
-    // cartBody.classList.add("cartBody");
-    // console.log(cartBody);
   }
-
-  // const emptySection = document.createElement("p");
-  // emptySection.className = "emptyCart";
-  // emptySection.appendChild(document.createTextNode("Your cart is empty"));
-  // cartUI.appendChild(emptySection);
 }
 
 // CLOSE CART
 function closeCart() {
-  // const cartUI = document.querySelector(".cart");
   cartUI.style.display = "none";
 }
 
@@ -136,53 +117,28 @@ function closeCart() {
 function addproduct(e) {
   e.preventDefault();
   // ADD NUMBER OF PRODUCT TO CART
-  //   let currentPrice = 125;
-  // let number = counterNumber;
   const cartItemNo = document.getElementById("cartItemNo");
-  // const cartUI = document.querySelector(".cart");
   const cartBody = document.querySelector(".cartBody");
-  // const section = document.querySelectort("section");
-  // console.log(cartBody);
   const productName = document.querySelector(".productName");
   const prices = document.querySelector("#priceTag");
-  // console.log(prices);
-  // const create = document.querySelector("#totalItem");
-  // console.log(create);
-  // const countDown = document.querySelector("#counterNumber").innerHTML;
-  // console.log(cartBody);
-  //   console.log("emptyCart");
   if (counterNumber.textContent === "0") {
-    // const cartBody = document.querySelector(".cartBody");
     cartBody.style.display = "none";
-    // console.log(cartBody);
     cartItemNo.style.display = "none";
-    // cartBody.classList.remove("cartBody");
-    // console.log(cartBody);
     emptySection.style.display = "block";
-    // emptySection.classList.add("show");
-    // console.log(emptySection);
   } else if (cartBody && counterNumber.textContent !== "0") {
     cartItemNo.innerHTML = counterNumber.textContent;
-    // console.log( cartItemNo.innerHTML);
     cartItemNo.style.display = "flex";
-    // console.log( cartItemNo);
     cartBody.style.display = "block";
     emptySection.style.display = "none";
-    // emptySection.classList.remove("show")
-
     prices.textContent = `${currentPrice} * ${counter} $${
       125 * counterNumber.textContent
     }`;
   } else {
-    // emptySection.classList.remove("show");
     emptySection.style.display = "none";
-    // console.log(emptySection);
     cartItemNo.style.display = "block";
     cartItemNo.innerHTML = counterNumber.textContent;
-    // emptySection.classList.remove("show");
     const section = document.createElement("section");
     section.className = "cartBody";
-    //   section.style.border = "1px solid red";
     cartUI.appendChild(section);
     const cartpara = document.createElement("div");
     cartpara.className = "cartParagraph";
@@ -203,7 +159,6 @@ function addproduct(e) {
     cartDetail.appendChild(prices);
     const span = document.createElement("span");
     span.id = "totalItem";
-    // console.log(span);
     span.textContent = `$${125 * counterNumber.textContent}`;
     prices.appendChild(span);
     const oimg = document.createElement("img");
@@ -238,4 +193,37 @@ function removeProduct(e) {
       counterNumber.innerHTML = "0";
     }
   }
+}
+
+// // LIGHTBOX FUNCTIONALITY
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+
+function showSlides(n) {
+  var i;
+  var lighBoxImg = document.getElementsByClassName("lighBoxImg");
+  var lighBoxSelect = document.getElementsByClassName("demo");
+  if (n > lighBoxImg.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = lighBoxImg.length;
+  }
+  for (i = 0; i < lighBoxImg.length; i++) {
+    lighBoxImg[i].style.display = "none";
+  }
+  for (i = 0; i < lighBoxSelect.length; i++) {
+    lighBoxSelect[i].className = lighBoxSelect[i].className.replace(
+      " active", "");
+  }
+  lighBoxImg[slideIndex - 1].style.display = "block";
+  lighBoxSelect[slideIndex - 1].className += " active";
 }
