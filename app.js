@@ -52,20 +52,15 @@ function LoadAllEventListeners() {
   cartUI.addEventListener("click", removeProduct);
 }
 
-function getItems(){
+function getItems() {
   let items;
   if (sessionStorage.getItem("items") === null) {
-    items = [];  
+    items = [];
   } else {
     items = JSON.parse(sessionStorage.getItem("items"));
   }
 
-  items.forEach(function(item) {
-    
-    
-    
-  });
-
+  items.forEach(function (item) {});
 }
 
 function menuOpen() {
@@ -192,17 +187,16 @@ function addproduct(e) {
   }
 }
 
-function  storeItemInSessionStorage(item) {
+function storeItemInSessionStorage(item) {
   let items;
   if (sessionStorage.getItem("items") === null) {
-    items = [];  
+    items = [];
   } else {
     items = JSON.parse(sessionStorage.getItem("items"));
   }
 
   items.push(item);
   sessionStorage.setItem("items", JSON.stringify(items));
-  
 }
 
 thumbNail1.forEach(function (item) {
@@ -255,7 +249,9 @@ function showSlides(n) {
   }
   for (i = 0; i < lighBoxSelect.length; i++) {
     lighBoxSelect[i].className = lighBoxSelect[i].className.replace(
-      " light", "");
+      " light",
+      ""
+    );
   }
   lighBoxImg[slideIndex - 1].style.display = "block";
   lighBoxSelect[slideIndex - 1].className += " light";
