@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <title>Ecommerce Product Page</title>
   </head>
   <body>
@@ -103,8 +104,7 @@
             </div>
             <button id="addToCart">
               <span class="addToCartImg"
-                ><img class="svg" src="./images/icon-cart.svg" alt="" srcset=""
-              /></span>
+                ><i class="fas fa-shopping-cart"></i></span>
               Add to cart
             </button>
           </div>
@@ -142,7 +142,8 @@
       <div class="lightBoxModal">
         <div class="lightBoxPopUp">
           <button class="removePopUp">
-            <img src="./images/icon-close.svg" alt="" srcset="" />
+            <i class="fas fa-times"></i>
+            <!-- <img src="./images/icon-close.svg" alt="" srcset="" /> -->
           </button>
 
           <div class="lightboxPictures">
@@ -192,21 +193,6 @@
         <img class="closeCart" src="./images/icon-close.svg" alt="CLOSE" />
       </div>
       <p class="emptyCart">Your cart is empty</p>
-      <!-- <section class="cartBody">
-      <div class="cartParagraph">
-        <img
-          id="cartItemImg"
-          src="./images/image-product-1-thumbnail.jpg"
-          alt="Product-1"
-        />
-        <div class="cartDetails">
-          <p>fall limited edition sneakers</p>
-          <p id="priceTag">$125.00 &times; 3 <span id="totalItem">$375.00</span></p>
-        </div>
-        <img id="deleteItem" src="./images/icon-delete.svg" alt="DELETE" />
-      </div>
-      <button class="checkout">checkout</button>
-    </section> -->
     </div>
 
     <script src="app.js"></script>

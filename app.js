@@ -37,6 +37,7 @@ let slideInterval;
 LoadAllEventListeners();
 
 function LoadAllEventListeners() {
+  document.addEventListener("DOMContentLoaded", getItems);
   menuUi.addEventListener("click", menuOpen);
   closeUi.addEventListener("click", closeModal);
   substract.addEventListener("click", decreaseNumber);
@@ -49,6 +50,22 @@ function LoadAllEventListeners() {
   removePopUp.addEventListener("click", closeLightBox);
   // thumbNail1.addEventListener("click", openLightBox);
   cartUI.addEventListener("click", removeProduct);
+}
+
+function getItems(){
+  let items;
+  if (sessionStorage.getItem("items") === null) {
+    items = [];  
+  } else {
+    items = JSON.parse(sessionStorage.getItem("items"));
+  }
+
+  items.forEach(function(item) {
+    
+    
+    
+  });
+
 }
 
 function menuOpen() {
@@ -169,7 +186,23 @@ function addproduct(e) {
     checkOutButton.className = "checkout";
     checkOutButton.innerHTML = "checkout";
     section.appendChild(checkOutButton);
+
+    // STORE IN SESSION STORAGE
+    storeItemInSessionStorage(section);
   }
+}
+
+function  storeItemInSessionStorage(item) {
+  let items;
+  if (sessionStorage.getItem("items") === null) {
+    items = [];  
+  } else {
+    items = JSON.parse(sessionStorage.getItem("items"));
+  }
+
+  items.push(item);
+  sessionStorage.setItem("items", JSON.stringify(items));
+  
 }
 
 thumbNail1.forEach(function (item) {
@@ -222,8 +255,8 @@ function showSlides(n) {
   }
   for (i = 0; i < lighBoxSelect.length; i++) {
     lighBoxSelect[i].className = lighBoxSelect[i].className.replace(
-      " active", "");
+      " light", "");
   }
   lighBoxImg[slideIndex - 1].style.display = "block";
-  lighBoxSelect[slideIndex - 1].className += " active";
+  lighBoxSelect[slideIndex - 1].className += " light";
 }
