@@ -75,7 +75,7 @@ function closeModal() {
   navUi.classList.remove("active");
 }
 
-let counter = 1;
+let counter = 0;
 
 function decreaseNumber(e) {
   if (counterNumber.innerHTML === "0") {
