@@ -239,7 +239,7 @@ a {
   background: url(./images/image-product-3.jpg) no-repeat center center/cover;
 }
 .carouselSlide:nth-child(4) {
-  background: url(./images/image-product-4.jpg) no-repeat center center/cover;
+  background: url(./images/image-product-4.jpg) .cart
 }
 
 .carousel > img {
