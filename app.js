@@ -41,6 +41,7 @@ function LoadAllEventListeners() {
   cartUI.addEventListener("click", removeProduct)
 }
 
+// Add to local storage
 function getItems() {
   let items
   if (localStorage.getItem("items") === null) {
@@ -61,6 +62,7 @@ function closeModal() {
   navUi.classList.remove("active")
 }
 
+// add counter functionality
 let counter = 0
 
 function decreaseNumber(e) {
