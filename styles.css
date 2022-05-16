@@ -577,6 +577,7 @@ h1 {
     right: 120px;
     box-shadow: -2px 13px 28px -1px hsl(220, 14%, 75%);
     border-radius: 8px;
+    display: none;
   }
   #addToCart {
     padding: 3px 15px;
