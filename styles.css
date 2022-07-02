@@ -221,6 +221,8 @@ a {
   position: absolute;
   top: 250px;
 }
+
+/* Slider key */
 #previousKey,
 #nextKey {
   border: none;
