@@ -205,7 +205,7 @@ a {
   background: url(./images/image-product-3.jpg) no-repeat center center/cover;
 }
 .carouselSlide:nth-child(4) {
-  background: url(./images/image-product-4.jpg);
+  background: url(./images/image-product-4.jpg) no-repeat center center/cover;
 }
 
 .carousel > img {
@@ -432,7 +432,6 @@ h1 {
 }
 
 .carousel > img {
-  border: 1px solid blue;
   height: 100%;
   width: 100%;
 }
